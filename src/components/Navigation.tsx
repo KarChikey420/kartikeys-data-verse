@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, FileText } from "lucide-react"; // 👈 added FileText icon
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,13 +21,18 @@ const Navigation = () => {
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
     { label: "Education", href: "#education" },
+    { label: "Resume", href: "https://drive.google.com/file/d/1fT3drgP9Omaoj-lEGBXjUeUCQ76q600D/view?usp=sharing", icon: <FileText className="w-4 h-4 inline-block ml-1" /> }, // 👈 Resume
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
+    if (href.startsWith("#")) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMobileMenuOpen(false);
+      }
+    } else {
+      window.open(href, "_blank"); // 👈 open resume in new tab
     }
   };
 
@@ -50,9 +55,9 @@ const Navigation = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors duration-200"
+                className="text-foreground hover:text-primary transition-colors duration-200 flex items-center"
               >
-                {item.label}
+                {item.label} {item.icon}
               </button>
             ))}
           </div>
@@ -76,9 +81,9 @@ const Navigation = () => {
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 py-2 text-foreground hover:text-primary hover:bg-primary/10 transition-colors duration-200"
+                  className="block w-full text-left px-4 py-2 text-foreground hover:text-primary hover:bg-primary/10 transition-colors duration-200 flex items-center"
                 >
-                  {item.label}
+                  {item.label} {item.icon}
                 </button>
               ))}
             </div>
