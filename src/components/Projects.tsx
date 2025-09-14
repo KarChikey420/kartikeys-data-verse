@@ -29,13 +29,17 @@ const Projects = () => {
   ];
 
   return (
-    <section className="py-20 bg-section-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+    <section className="py-20 bg-section-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--accent)_0%,_transparent_70%)] opacity-5"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--primary)_0%,_transparent_50%)] opacity-5"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-12 animate-fade-in-up">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Featured Projects
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
             Personal projects showcasing my technical expertise
           </p>
         </div>
@@ -44,19 +48,20 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="bg-card hover:bg-card-hover transition-all duration-300 border-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10"
+              className="bg-card hover:bg-card-hover transition-all duration-300 border-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 group animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               <CardHeader>
-                <CardTitle className="text-xl text-foreground flex items-center justify-between">
+                <CardTitle className="text-lg sm:text-xl text-foreground flex items-center justify-between group-hover:text-primary transition-colors duration-300">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-primary rounded-full"></div>
+                    <div className="w-3 h-3 bg-primary rounded-full group-hover:animate-pulse-glow"></div>
                     <span>{project.title}</span>
                   </div>
                   <div className="flex gap-2">
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="text-primary hover:bg-primary/10 p-2"
+                      className="text-primary hover:bg-primary/10 p-2 hover:scale-110 transition-all duration-300"
                       onClick={() => window.open(project.githubUrl, '_blank')}
                     >
                       <Github className="w-4 h-4" />
@@ -65,7 +70,7 @@ const Projects = () => {
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="text-primary hover:bg-primary/10 p-2"
+                        className="text-primary hover:bg-primary/10 p-2 hover:scale-110 transition-all duration-300"
                         onClick={() => window.open(project.demoUrl, '_blank')}
                       >
                         <ExternalLink className="w-4 h-4" />
@@ -81,21 +86,21 @@ const Projects = () => {
                       <Badge 
                         key={techIndex}
                         variant="secondary"
-                        className="bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                        className="bg-primary/10 text-primary hover:bg-primary/20 hover:scale-105 transition-all duration-300"
                       >
                         {tech}
                       </Badge>
                     ))}
                   </div>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
                   {project.description}
                 </p>
                 <div className="mt-4">
                   <Button
                     variant="outline"
                     size="sm"
-                    className="border-primary/50 text-primary hover:bg-primary/10"
+                    className="border-primary/50 text-primary hover:bg-primary/10 hover:scale-105 transition-all duration-300 hover:shadow-md"
                     onClick={() => window.open(project.githubUrl, '_blank')}
                   >
                     <Github className="w-4 h-4 mr-2" />

@@ -71,13 +71,17 @@ const Experience = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+    <section className="py-20 bg-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--primary)_0%,_transparent_50%)] opacity-5"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--accent)_0%,_transparent_50%)] opacity-5"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-12 animate-fade-in-up">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Professional Experience
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
             My journey in data engineering and analytics
           </p>
         </div>
@@ -85,17 +89,21 @@ const Experience = () => {
         <div className="max-w-4xl mx-auto">
           {/* Work Experience */}
           <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6 text-foreground">Work Experience</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-foreground animate-fade-in-up">Work Experience</h3>
             {experiences.map((exp, index) => (
-              <Card key={index} className="mb-6 bg-card hover:bg-card-hover transition-colors duration-300 border-border/50">
+              <Card 
+                key={index} 
+                className="mb-6 bg-card hover:bg-card-hover transition-all duration-300 border-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 group animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
                 <CardHeader>
-                  <CardTitle className="text-xl text-foreground flex items-start justify-between flex-wrap gap-2">
+                  <CardTitle className="text-lg sm:text-xl text-foreground flex items-start justify-between flex-wrap gap-2">
                     <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Building2 className="w-5 h-5 text-primary" />
+                      <div className="flex items-center gap-2 mb-2 group-hover:text-primary transition-colors duration-300">
+                        <Building2 className="w-5 h-5 text-primary group-hover:animate-pulse-glow" />
                         <span>{exp.title}</span>
                       </div>
-                      <div className="text-lg font-medium text-primary">{exp.company}</div>
+                      <div className="text-base sm:text-lg font-medium text-primary">{exp.company}</div>
                     </div>
                     <div className="text-sm text-muted-foreground">
                       <div className="flex items-center gap-2 mb-1">
@@ -112,7 +120,7 @@ const Experience = () => {
                 <CardContent>
                   <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                     {exp.description.map((item, itemIndex) => (
-                      <li key={itemIndex}>{item}</li>
+                      <li key={itemIndex} className="hover:text-foreground transition-colors duration-200">{item}</li>
                     ))}
                   </ul>
                 </CardContent>
@@ -122,15 +130,19 @@ const Experience = () => {
 
           {/* Project Experience */}
           <div>
-            <h3 className="text-2xl font-semibold mb-6 text-foreground">Project Experience</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-foreground animate-fade-in-up">Project Experience</h3>
             <div className="grid gap-6">
               {projects.map((project, index) => (
-                <Card key={index} className="bg-card hover:bg-card-hover transition-colors duration-300 border-border/50">
+                <Card 
+                  key={index} 
+                  className="bg-card hover:bg-card-hover transition-all duration-300 border-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 group animate-fade-in-up"
+                  style={{ animationDelay: `${(index + 1) * 0.2}s` }}
+                >
                   <CardHeader>
-                    <CardTitle className="text-lg text-foreground flex items-start justify-between flex-wrap gap-2">
+                    <CardTitle className="text-base sm:text-lg text-foreground flex items-start justify-between flex-wrap gap-2">
                       <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-3 h-3 bg-primary rounded-full"></div>
+                        <div className="flex items-center gap-2 mb-2 group-hover:text-primary transition-colors duration-300">
+                          <div className="w-3 h-3 bg-primary rounded-full group-hover:animate-pulse-glow"></div>
                           <span>{project.title}</span>
                         </div>
                         <div className="text-sm font-medium text-primary">{project.company}</div>
@@ -144,7 +156,7 @@ const Experience = () => {
                           <Badge 
                             key={techIndex}
                             variant="outline"
-                            className="border-primary/30 text-primary"
+                            className="border-primary/30 text-primary hover:bg-primary/10 hover:scale-105 transition-all duration-300"
                           >
                             {tech}
                           </Badge>
@@ -153,7 +165,7 @@ const Experience = () => {
                     </div>
                     <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                       {project.description.map((item, itemIndex) => (
-                        <li key={itemIndex}>{item}</li>
+                        <li key={itemIndex} className="hover:text-foreground transition-colors duration-200">{item}</li>
                       ))}
                     </ul>
                   </CardContent>

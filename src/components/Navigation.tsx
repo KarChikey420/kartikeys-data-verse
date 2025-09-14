@@ -45,7 +45,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="text-xl font-bold text-primary">
+          <div className="text-lg sm:text-xl font-bold text-primary">
             KN
           </div>
 
@@ -55,7 +55,7 @@ const Navigation = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors duration-200 flex items-center"
+                className="text-sm sm:text-base text-foreground hover:text-primary transition-colors duration-200 flex items-center"
               >
                 {item.label} {item.icon}
               </button>
@@ -81,7 +81,7 @@ const Navigation = () => {
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 py-2 text-foreground hover:text-primary hover:bg-primary/10 transition-colors duration-200 flex items-center"
+                  className="block w-full text-left px-4 py-2 text-sm text-foreground hover:text-primary hover:bg-primary/10 transition-colors duration-200 flex items-center"
                 >
                   {item.label} {item.icon}
                 </button>
