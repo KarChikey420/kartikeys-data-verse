@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail, Phone, MapPin, Twitter } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-section-background to-background relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-section-background to-background relative overflow-hidden pt-16">
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--primary)_0%,_transparent_50%)] opacity-20"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--primary)_0%,_transparent_50%)] opacity-10"></div>
@@ -42,10 +42,11 @@ const Hero = () => {
           {/* Summary */}
           <div className="mb-8 max-w-3xl mx-auto">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Results-oriented Data Engineer & Data analyst with expertise in building scalable data pipelines and data automation, 
-              real-time processing systems, and backend services using Python, Airflow, Kafka, and FastAPI. 
-              Skilled in ETL development, data modeling, and database management with strong proficiency in 
-              analytics dashboards and cloud-native workflows.
+              Results-oriented Data Engineer with expertise in building scalable data pipelines, real-time processing systems, and backend services using
+              Python, Airflow, Kafka, and FastAPI. Skilled in ETL development, data modeling, and database management (PostgreSQL, MongoDB,
+              PostGIS), with proficiency in analytics dashboards (Streamlit, Superset) and cloud-native workflows (GCP, AWS S3). Experienced in
+              microservices, RESTful APIs, Redis, and distributed systems, with a proven track record of optimizing pipelines and improving reporting
+              latency. Currently expanding into big data technologies including Apache Spark, Apache Hudi, and Trino.
             </p>
           </div>
 

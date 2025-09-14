@@ -49,6 +49,16 @@ const Experience = () => {
       ]
     },
     {
+      title: "CRR Dashboard",
+      company: "Yatra Online Ltd.",
+      technologies: ["Python", "Streamlit", "Pandas", "Requests", "APIs", "CSV"],
+      description: [
+        "Developed an ETL pipeline in Python to fetch and normalize hotel pricing data from multiple APIs (EYC, PWC, CIPLA)",
+        "Benchmarked pricing data against competitor travel agencies",
+        "Built a secure Streamlit dashboard with LDAP-based login for role-based access and downloadable reports"
+      ]
+    },
+    {
       title: "YSF Email Automation System",
       company: "Yatra Online Ltd.",
       technologies: ["Python", "Pandas", "SMTP"],

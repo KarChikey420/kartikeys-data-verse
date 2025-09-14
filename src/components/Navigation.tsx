@@ -21,7 +21,7 @@ const Navigation = () => {
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
     { label: "Education", href: "#education" },
-    { label: "Resume", href: "https://drive.google.com/file/d/1fT3drgP9Omaoj-lEGBXjUeUCQ76q600D/view?usp=sharing", icon: <FileText className="w-4 h-4 inline-block ml-1" /> }, // 👈 Resume
+    { label: "Resume", href: "https://drive.google.com/file/d/1MIRdgb2M5q9YvSq99bFnt3kjN5TOOOro/view?usp=sharing", icon: <FileText className="w-4 h-4 inline-block ml-1" /> }, // 👈 Resume
   ];
 
   const scrollToSection = (href: string) => {

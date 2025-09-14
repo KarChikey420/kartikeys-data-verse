@@ -8,15 +8,22 @@ const Projects = () => {
     {
       title: "TrustTrace Flow",
       technologies: ["FastAPI", "DuckDB", "ChromaDB", "SentenceTransformers", "Streamlit"],
-      description: "Developed an ingestion and traceability pipeline for 25K+ patent records with SHA256 fingerprinting, dual storage (raw + cleaned) in DuckDB, and semantic search using vector embeddings in ChromaDB. Exposed REST APIs with FastAPI and built a Streamlit dashboard for interactive search and API validation.",
+      description: "Developed an ingestion and traceability pipeline for 25K+ patent records with SHA256 fingerprinting, dual storage in DuckDB, and semantic search using vector embeddings in ChromaDB. Exposed REST APIs with FastAPI and built a Streamlit dashboard for interactive search and API validation.",
       githubUrl: "https://github.com/KarChikey420/TrustTrace_flow",
       demoUrl: null
     },
     {
       title: "BankPulse",
       technologies: ["AWS S3", "Python", "PostgreSQL", "Pandas", "Boto3"],
-      description: "Designed a real-time banking transaction monitoring system simulating 10K+ transactions/sec. Built ingestion (S3 uploader) and detection (S3 listener) mechanisms in Python, leveraged PostgreSQL for intermediate state management and deduplication, and implemented custom detection patterns (UPGRADE, CHILD, DEI). Batched results were written back to S3 for downstream analytics.",
+      description: "Designed a real-time banking transaction monitoring system simulating 10K+ transactions/sec. Built ingestion and detection mechanisms in Python, leveraged PostgreSQL for state management and deduplication, and implemented custom detection patterns (UPGRADE, CHILD, DEI). Batched results were written back to S3 for downstream analytics.",
       githubUrl: "https://github.com/KarChikey420/Bank_pluse",
+      demoUrl: null
+    },
+    {
+      title: "CSV EDA Agent",
+      technologies: ["Streamlit", "LangChain", "Google Gemini", "Pandas", "Python"],
+      description: "Developed an intelligent CSV data analysis tool using Streamlit and LangChain integration with Google Gemini 1.5 model. Built a user-friendly interface for uploading CSV files and performing natural language queries on datasets. Implemented pandas dataframe agent for intelligent data querying and visualization capabilities. Features include data preview, statistical analysis, and interactive Q&A interface for exploratory data analysis.",
+      githubUrl: "https://github.com/KarChikey420/csv_agent",
       demoUrl: null
     }
   ];

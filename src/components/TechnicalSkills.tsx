@@ -9,7 +9,7 @@ const TechnicalSkills = () => {
     },
     {
       title: "Frameworks & Libraries",
-      skills: ["Pandas", "NumPy", "Streamlit", "FastAPI", "Flask"]
+      skills: ["Pandas", "NumPy", "Streamlit", "FastAPI", "Flask", "Matplotlib", "Seaborn", "LangChain"]
     },
     {
       title: "Databases",
